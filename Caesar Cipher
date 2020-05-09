@@ -1,0 +1,40 @@
+import java.util.*;
+class Solution
+{
+    public static void main(String[] args)
+    {
+        int i,num;
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        String a=sc.next();
+        int b=sc.nextInt()%26;
+        char str[]=a.toCharArray();
+        for(i=0;i<str.length;i++)
+        {
+            if(str[i]>='A' && str[i]<='Z' )
+            {
+                num=0;
+                num=(int)(str[i]+b);
+                if(num>90)
+                {
+                    num=64+num-90;
+                }
+                str[i]=(char)((int)num);
+               
+            }
+            if(str[i]>='a' && str[i]<='z' )
+            {
+                num=0;
+                num=(int)(str[i]+b);
+                if(num>122)
+                {
+                    num=96+num-122;
+                }
+                str[i]=(char)((int)num);
+               
+            }
+        }
+            System.out.println(str); 
+    }
+
+}
