@@ -1,0 +1,37 @@
+import java.util.*;
+class Solution
+{
+    public static boolean isPangram(String a)
+    {
+        boolean isPangram=true;
+        int al[]=new int[256];
+        int i;
+        for(char c:a.toCharArray())
+        {
+                int index=(int) c;
+                al[index]++;
+        }
+        for(i=97;i<123;i++)
+        {
+            if(al[i]<1)
+            {
+                isPangram=false;
+                break;
+    
+            }
+        }
+
+        return isPangram;
+    }
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        str=str.replace(" ","");
+        String str1=str.toLowerCase();
+        if(isPangram(str1)==true)
+        System.out.println("pangram");
+        else
+        System.out.println("not pangram");
+    }
+}'
